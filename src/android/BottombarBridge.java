@@ -27,26 +27,34 @@ public class BottombarBridge extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) {
 
-		if (action==null || "changeTab".equals(action)==false || args.length() < 2) {
-			//return new PluginResult(PluginResult.Status.INVALID_ACTION);
-			callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.INVALID_ACTION));
-			return false;
-		}
+@Override
+    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) {
 
-        // Parse the arguments
-		final CordovaResourceApi resourceApi = webView.getResourceApi();
+	if (action==null || "changeTab".equals(action)==false
+	|| args.length() < 2) {
+		//return new PluginResult(PluginResult.Status.INVALID_ACTION);
+		callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.INVALID_ACTION));
+		return false;
+	}
 
-        int tabIdx = args.getInt(0);
-        String url = args.getString(1);
-        
-        // Todo: Some validation required
-        
-        BottombarFunction act = (BottombarFunction)this.cordova.getActivity();
-        act.changeTab(tabIdx, url);
-        
-        //return new PluginResult(PluginResult.Status.OK);
-        callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
-        return true;
+        try {
+            int tabIdx = args.getInt(0);
+
+
+            Log.d("Tab clicked: ", tabIdx);
+
+            // Todo: Some validation required
+
+            BottombarFunction act = (BottombarFunction) this.cordova.getActivity();
+            act.changeTab(tabIdx, url);
+
+            //return new PluginResult(PluginResult.Status.OK);
+            callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
+            return true;
+        } catch(Exception e){
+            Log.e("Error", e.getMessage());
+        }
+        return false;
 
     }
 
