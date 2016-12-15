@@ -1,17 +1,6 @@
-﻿package com.method76.bottombar.bridge;
-
-import java.util.HashMap;
-import java.util.Map;
+package com.method76.bottombar.bridge;
 
 import org.apache.cordova.CordovaActivity;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import android.content.Intent;
-import android.net.Uri;
-import android.text.Html;
-
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaResourceApi;
@@ -33,22 +22,21 @@ public class BottombarBridge extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) {
 
-				if (action==null || "changeTab".equals(action)==false || args.length() < 2) {
-						//return new PluginResult(PluginResult.Status.INVALID_ACTION);
-						callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.INVALID_ACTION));
-						return false;
-					}
-				}
+		if (action==null || "changeTab".equals(action)==false || args.length() < 2) {
+			//return new PluginResult(PluginResult.Status.INVALID_ACTION);
+			callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.INVALID_ACTION));
+			return false;
+		}
 
         // Parse the arguments
-				final CordovaResourceApi resourceApi = webView.getResourceApi();
+		final CordovaResourceApi resourceApi = webView.getResourceApi();
 
         int tabIdx = args.getInt(0);
         String url = args.getString(1);
         
         // Todo: Some validation required
         
-        MainActivity act = (MainActivity)this.cordova.getActivity()
+        BottombarFunction act = (BottombarFunction)this.cordova.getActivity();
         act.changeTab(tabIdx, url);
         
         //return new PluginResult(PluginResult.Status.OK);
