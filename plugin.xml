@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+           id="com.method76.bottombar.bridge"
+      version="0.5.0">
+    <name>BottombarBridgee</name>
+    <description>Bottombar Bridge for Cordova</description>
+    <license>MIT</license>
+    <keywords>cordova,BottombarBridge</keywords>
+
+    <js-module src="www/bottombar_bridge.js" name="BottombarInterface">
+        <clobbers target="BottombarBridge" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="BottombarBridge">
+                <param name="android-package" value="com.method76.bottombar.bridge"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/BottombarBridge.java" target-dir="src/com/method76/bottombar/bridge" />
+    </platform>
+</plugin>
