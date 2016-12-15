@@ -23,6 +23,7 @@ import org.apache.cordova.PluginResult;
  */
 public interface BottombarFunction {
 
-    int changeTab(int idx, String URL);
+    int changeTab(int idx);
+    int changeTab(int idx, String url);
 
 }
