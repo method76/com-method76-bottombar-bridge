@@ -21,7 +21,7 @@ import org.apache.cordova.PluginResult;
  * BottombarBridge is a Cordova plugin that communicates Native Tab UI with JavaScript
  * @author methodtweak@naver.com
  */
-interface BottombarFunction {
+public interface BottombarFunction {
 
     int changeTab(int idx, String URL);
 
