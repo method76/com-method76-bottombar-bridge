@@ -20,5 +20,6 @@
             </feature>
         </config-file>
         <source-file src="src/android/BottombarBridge.java" target-dir="src/com/method76/bottombar/bridge" />
+        <source-file src="src/android/BottombarFunction.java" target-dir="src/com/method76/bottombar/bridge" />
     </platform>
 </plugin>
