@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
            id="com.method76.bottombar.bridge"
-      version="0.5.0">
+      version="0.5.1">
     <name>BottombarBridgee</name>
     <description>Bottombar Bridge for Cordova</description>
     <license>MIT</license>
