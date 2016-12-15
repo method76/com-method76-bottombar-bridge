@@ -5,7 +5,7 @@
       version="0.5.1">
     <name>BottombarBridgee</name>
     <description>Bottombar Bridge for Cordova</description>
-    <license>MIT</license>
+    <license>Apache2.0</license>
     <keywords>cordova,BottombarBridge</keywords>
 
     <js-module src="www/bottombar_bridge.js" name="BottombarInterface">
@@ -15,8 +15,8 @@
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="BottombarBridge">
-                <param name="android-package" value="com.method76.bottombar.bridge"/>
+            <feature name="BottombarFunction">
+                <param name="android-package" value="com.method76.bottombar.bridge.BottombarFunction"/>
             </feature>
         </config-file>
         <source-file src="src/android/BottombarBridge.java" target-dir="src/com/method76/bottombar/bridge" />
