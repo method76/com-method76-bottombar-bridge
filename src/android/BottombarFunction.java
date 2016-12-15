@@ -1,4 +1,4 @@
-package com.method76.bottombar.bridge;
+package com.method76.bottombarbridge;
 
 import java.util.HashMap;
 import java.util.Map;
