@@ -9,12 +9,13 @@
     // WebIntent.prototype.ACTION_SENDTO = "android.intent.action.SENDTO";
 
     BottombarBridge.prototype.changeTab = function(idx, url, success, fail) {
+	var params = url==null?[idx]:[idx, url];
         return cordova.exec(
         	function(args) {
 	            success(args);
 	        }, function(args) {
 	            fail(args);
-	        }, 'BottombarBridge', 'changeTab', [idx, url]);
+	        }, 'BottombarBridge', 'changeTab', params);
     };
 
     window.bottombarBridge = new BottombarBridge();
