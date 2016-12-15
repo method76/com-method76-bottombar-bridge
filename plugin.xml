@@ -16,12 +16,10 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="BottombarBridge">
-                <param name="android-package" value="com.method76.bottombar.bridge.BottombarBridge"/>
+                <param name="android-package" value="com.method76.bottombarbridge.BottombarBridge"/>
             </feature>
         </config-file>
-         <!--
-        <source-file src="src/android/BottombarBridge.java" target-dir="src/com/method76/bottombar/bridge" />
-        <source-file src="src/android/BottombarFunction.java" target-dir="src/com/method76/bottombar/bridge" />
-        -->
+        <source-file src="src/android/BottombarBridge.java" target-dir="src/com/method76/bottombarbridge" />
+        <source-file src="src/android/BottombarFunction.java" target-dir="src/com/method76/bottombarbridge" />
     </platform>
 </plugin>
