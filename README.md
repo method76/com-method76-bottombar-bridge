@@ -4,11 +4,11 @@
 ## Adding the Plugin to your project ##
 1. To install the plugin, use the Cordova CLI and enter the following:
 
-#`cordova plugin add ~~~'
+cordova plugin add ~~~
 
 2. Confirm that the following is in your `res/xml/config.xml` file:
 
-#`<plugin name="BottombarBridge" value="com.method76.bottombar.bridge" />`
+<plugin name="BottombarBridge" value="com.method76.bottombar.bridge" />
 
 ## Sample code
 
